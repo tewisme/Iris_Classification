@@ -63,6 +63,5 @@ def proc(data):
     
     plt.figure(figsize=(9,4))
     
-    
     plt.show()
     #SepalWidth End
