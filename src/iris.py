@@ -6,15 +6,15 @@ import plotly.graph_objs as go
 import seaborn as sns
 import missingno as msno
 
-#Data Processing
-
 data_path = '..\\data\\iris.csv'
 data = pd.read_csv(data_path)
-data.head()
+#print(data)
 
-#data.info(verbose=True) how many column, line/column
-#print(data.nunique()) differant value on each column
-#print(data.describe())
+#Overview 'bout Data
+
+#data.info(verbose=True) #how many column, line/column
+#print(data.nunique()) #differant value on each column
+#print(data.describe()) #absolutly for describe data
 
 """
 # Count null-value, null-ratio
@@ -29,3 +29,27 @@ print(null_info)
 msno.matrix(data)
 plt.show()
 """
+
+"""
+# Flowers ratio
+print('% Setosa:', format((data.Species=='Iris-setosa').sum()/len(data)*100, '.2f'))
+print('% Versicolor:', format((data.Species=='Iris-versicolor').sum()/len(data)*100, '.2f'))
+print('% Virginica:', format((data.Species=='Iris-virginica').sum()/len(data)*100, '.2f'))
+"""
+
+#Represent data and change data throught data.copy()
+
+data1 = data.copy()
+
+#print(data1['SepalLengthCm'].value_counts(dropna=False))
+#dropna = Drop Nan: Loai bo non-value, dropna=False => khong loai bo non-value; defaul: dropna=True
+
+plt.figure(figsize=(9,4))
+#1st subplot
+plt.subplot(1,2,1)
+sns.histplot(data1.SepalLengthCm, bins=20, kde=True)
+plt.title('Histplot diagram for SepalLengthCm')
+
+#2nd subplot
+plt.subplot(1,2,2)
+plt.show()
