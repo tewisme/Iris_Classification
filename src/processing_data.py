@@ -29,7 +29,7 @@ def visualization(data):
     
     #Sepal Length
     #print(data1['SepalLengthCm'].value_counts(dropna=False))
-    """
+    #"""
     plt.figure(figsize=(9,4))
     #first subplot
     plt.subplot(1,2,1)
@@ -40,11 +40,11 @@ def visualization(data):
     sns.boxplot(x="Species", y="SepalLengthCm", data=data1)
     sns.stripplot(x="Species", y="SepalLengthCm", data=data1, jitter=True, edgecolor='black')
     plt.title("Boxplot for SepalLengthCm")
-    """
+    #"""
 
     #Sepal Width
     #print(data1['SepalWidthCm'].value_counts(dropna=False))
-    """
+    #"""
     plt.figure(figsize=(9,4))
     #first subplot
     plt.subplot(1,2,1)
@@ -55,11 +55,11 @@ def visualization(data):
     sns.violinplot(x="Species", y="SepalWidthCm", data=data1)
     sns.stripplot(x="Species", y="SepalWidthCm", data=data1, jitter=True, edgecolor='black')
     plt.title("Boxplot for SepalWidthCm")
-    """
+    #"""
     
     #Petal Length
     #print(data1['PetalLengthCm'].value_counts(dropna=False))
-    """
+    #"""
     #first subplot
     plt.figure(figsize=(9,4))
     plt.subplot(1,2,1)
@@ -70,7 +70,7 @@ def visualization(data):
     sns.boxplot(x="Species", y="PetalLengthCm", data=data1)
     sns.stripplot(x="Species", y="PetalLengthCm", data=data1, jitter=True, edgecolor='black')
     plt.title("Boxplot for PetalLengthCm")
-    """
+    #"""
 
     #Petal Width
     #print(data1['PetalWidthCm'].value_counts(dropna=False))
@@ -87,9 +87,16 @@ def visualization(data):
     plt.title('Boxplot for PetalWidthCm')
     #"""
 
+    plt.show()
 
+def relationship(data):
+    data1 = data.copy()
+    plt.figure(figsize=(10,5))
+    sns.jointplot(x="SepalLengthCm", y="SepalWidthCm", data=data1, size=5, hue="Species")
+    plt.title("Relationship between SepalLengthCm and SepalWidthCm")
     plt.show()
 
 def proc(data):
     #overview(data)
-    visualization(data)
+    #visualization(data)
+    relationship(data)
