@@ -23,11 +23,11 @@ def proc(data):
     print(null_info)
     """
 
-    """
+    #"""
     # represent null throught image
     msno.matrix(data)
     plt.show()
-    """
+    #"""
     
     """
     # Flowers ratio
