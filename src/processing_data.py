@@ -27,7 +27,68 @@ def overview(data):
 def visualization(data):
     data1 = data.copy()
     
-    print(data1['SepalLengthCm'].value_counts(dropna=False))
+    #Sepal Length
+    #print(data1['SepalLengthCm'].value_counts(dropna=False))
+    """
+    plt.figure(figsize=(9,4))
+    #first subplot
+    plt.subplot(1,2,1)
+    sns.histplot(data1.SepalLengthCm, bins=10, kde=True)
+    plt.title('Histplot diagram for SepalLengthCm')
+    #second subplot
+    plt.subplot(1,2,2)
+    sns.boxplot(x="Species", y="SepalLengthCm", data=data1)
+    sns.stripplot(x="Species", y="SepalLengthCm", data=data1, jitter=True, edgecolor='black')
+    plt.title("Boxplot for SepalLengthCm")
+    """
+
+    #Sepal Width
+    #print(data1['SepalWidthCm'].value_counts(dropna=False))
+    """
+    plt.figure(figsize=(9,4))
+    #first subplot
+    plt.subplot(1,2,1)
+    sns.histplot(data1.SepalWidthCm, bins=5, kde=True)
+    plt.title("Histplot diagram for SepalWidthCm")
+    #second subplot
+    plt.subplot(1,2,2)
+    sns.violinplot(x="Species", y="SepalWidthCm", data=data1)
+    sns.stripplot(x="Species", y="SepalWidthCm", data=data1, jitter=True, edgecolor='black')
+    plt.title("Boxplot for SepalWidthCm")
+    """
+    
+    #Petal Length
+    #print(data1['PetalLengthCm'].value_counts(dropna=False))
+    """
+    #first subplot
+    plt.figure(figsize=(9,4))
+    plt.subplot(1,2,1)
+    sns.histplot(data1.PetalLengthCm, bins=10, kde=True)
+    plt.title("Histplot diagram for PetalLengthCm")
+    #second subplot
+    plt.subplot(1,2,2)
+    sns.boxplot(x="Species", y="PetalLengthCm", data=data1)
+    sns.stripplot(x="Species", y="PetalLengthCm", data=data1, jitter=True, edgecolor='black')
+    plt.title("Boxplot for PetalLengthCm")
+    """
+
+    #Petal Width
+    #print(data1['PetalWidthCm'].value_counts(dropna=False))
+    #"""
+    plt.figure(figsize=(9,4))
+    #first subplot
+    plt.subplot(1,2,1)
+    sns.histplot(data1.PetalWidthCm, bins=10, kde=True)
+    plt.title('Histplot diagram for PetalWidthCm')
+    #second subplot
+    plt.subplot(1,2,2)
+    sns.violinplot(x="Species", y="PetalWidthCm", data=data1)
+    sns.stripplot(x="Species", y="PetalWidthCm", data=data1, jitter=True, edgecolor='black')
+    plt.title('Boxplot for PetalWidthCm')
+    #"""
+
+
+    plt.show()
 
 def proc(data):
     #overview(data)
